@@ -1,13 +1,15 @@
 ﻿<!DOCTYPE html>
 <html lang="pt">
 
-<head>
+<head id="home">
     <meta charset="utf-8" />
     <title>Tower Defense</title>
+    <link type="text/css" rel="stylesheet" href="/styles/style.css">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster">
+    <script type="text/javascript" src="/scripts/funcoes.js"></script>
     <nav id="menu">
         <ul>
-            <a href="">
+            <a href="#home">
                 <li>Home</li>
             </a>
             <a href="#registo">
@@ -29,77 +31,9 @@
     </nav>
     <h1 id="titulos">Tower Defense</h1>
 </head>
-    
-    <style>
-        #titulos {
-    font-family: Lobster;
-    text-align: center;
-    font-size: 60px;
-    color: white;
-}
 
-body {
-    background: linear-gradient(120deg, #155799, #159957);
-    background-repeat:no-repeat;
-    margin-top: 100px;
-}
-
-section {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: white;
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
-#menu {
-    position: fixed;
-    width: 100%;
-    top: 1%;
-}
-
-#menu ul {
-    text-align: center;
-    padding: 0%;
-    margin: 0%;
-    width: 100%;
-}
-
-
-#menu li{
-    transition-duration: 0.4s;
-    text-align: center;
-    display: inline-block;
-    border-radius: 20px;
-    border-style: solid;
-    border-width: 4px;
-    border-color: white;
-    padding: 15px;
-    margin: 0%;
-    width: 10%;
-    background-color: transparent;
-}
-
-#menu li:hover {
-    background: white;
-    color: #155799;
-}
-
-#menu a :visited
-{
-    color: white;
-}
-
-#menu a {
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    color: white;
-}
-    </style>
-
-<body>
-    <section id="home">
+<body onload="loadImages()">
+    <section id="home" class="minhasection">
         <h1 id="titulos" style="font-size: 30px;">Descrição</h1>
         <article>
             Trata-se de um jogo do tipo <span style="font-style:italic;">Tower Defense</span> com varios niveis e mapas. Existem varios tipos de torres defensivas assim como entidades enimigas. Pode ser jogado a partir de varias prespetivas: aerea (cima-baixo), prespectiva e primeira pessoa (como entidade defensiva).
@@ -112,15 +46,31 @@ section {
         </article>
     </section>
 
-    <section id="registo">
+    <section id="registo" class="minhasection">
+            <h1 id="titulos" style="font-size: 30px;">Registar</h1>
+            <form action="">
+                <fieldset>
+                  <legend>Dados:</legend>
+                  Utilizador:<br>
+                  <input type="text" name="firstname" value="Mickey"><br>
+                  Password:<br>
+                  <input type="password" name="lastname" value="Mouse"><br><br>
+                  <input type="submit" value="Submit">
+                </fieldset>
+              </form>
     </section>
+
 
     <section id="galeria">
+            <h1 id="titulos" style="font-size: 30px;">Galeria</h1>
+            <div id="imagens"></div>
     </section>
 
-    <section id="estatisticas">
+    <section id="estatisticas" class="minhasection">
+        
     </section>
 
+    
 
 </body>
 

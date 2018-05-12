@@ -8,10 +8,9 @@
 body {
     background: linear-gradient(120deg, #155799, #159957);
     background-repeat:no-repeat;
-    margin-top: 100px;
 }
 
-section {
+.minhasection {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: white;
@@ -20,9 +19,7 @@ section {
 }
 
 #menu {
-    position: fixed;
     width: 100%;
-    top: 1%;
 }
 
 #menu ul {
@@ -32,6 +29,25 @@ section {
     width: 100%;
 }
 
+
+
+.showcase {
+    display: inline-block;
+    padding: 0;
+    margin: 3px;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
+    border-color: white;
+}
+
+#imagens {
+    /*padding-left: 10%;
+    padding-right: 10%;*/
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
 
 #menu li{
     transition-duration: 0.4s;
