@@ -1,28 +1,28 @@
 ﻿<!DOCTYPE html>
 <html lang="pt">
 
-<head id="home">
+<head>
     <meta charset="utf-8" />
     <title>Tower Defense</title>
-    <link type="text/css" rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
-    <script type="text/javascript" src="scripts/funcoes.js"></script>
+    <link type="text/css" rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster">
+    <script type="text/javascript" src="/scripts/funcoes.js"></script>
     <nav id="menu">
         <ul>
-            <a href="#home">
+            <a href="javascript:showHome()">
                 <li>Home</li>
             </a>
-            <a href="#registo">
+            <a href="javascript:showRegisto()">
                 <li>
                     Registar
                 </li>
             </a>
-            <a href="#galeria">
+            <a href="javascript:showGaleria()">
                 <li>
                     Galeria
                 </li>
             </a>
-            <a href="#estatisticas">
+            <a href="javascript:showEstatisticas()">
                 <li>
                     Estatísticas
                 </li>
@@ -32,7 +32,7 @@
     <h1 id="titulos">Tower Defense</h1>
 </head>
 
-<body onload="loadImages()">
+<body onload="showHome()">
     <section id="home" class="minhasection">
         <h1 id="titulos" style="font-size: 30px;">Descrição</h1>
         <article>
@@ -50,7 +50,7 @@
             <h1 id="titulos" style="font-size: 30px;">Registar</h1>
             <form action="">
                 <fieldset>
-                  <legend>Dados:</legend>
+                  <legend style="text-align:center;">Dados:</legend>
                   Utilizador:<br>
                   <input type="text" name="firstname" value="Mickey"><br>
                   Password:<br>
@@ -70,7 +70,6 @@
         
     </section>
 
-    
 
 </body>
 
