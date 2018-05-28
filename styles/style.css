@@ -85,7 +85,7 @@ input {
 
 .video {
     width: 100%;
-    height: 480px;
+    height: 100%;
     margin-top: 10px;
     display: block;
     margin: auto;
@@ -94,6 +94,7 @@ input {
 @media screen and (min-width: 1253px){
     .video {
         width: 854px;
+        height: 480px;
     }
 }
 #tabela_estatisticas {
@@ -214,6 +215,11 @@ input {
     font-size: 17px;
   }
   
+  #label_menu_telefone {
+      display: none;
+      color:white;
+  }
+
   .topnav a:hover {
     background-color: white;
     color: #155799;
@@ -229,7 +235,13 @@ input {
   }
   
   @media screen and (max-width: 768px) {
-    .topnav a:not(:first-child) {display: none;}
+    .topnav a{display: none;}
+    #label_menu_telefone {
+        display: inline-block;
+        padding-top: 4%;
+        padding-bottom: 4%;
+        padding-left: 2%;
+    }
     .topnav a.icon {
       float: right;
       display: block;
@@ -245,8 +257,41 @@ input {
     }
 
     @media screen and (max-width: 768px) {
+        #imagens {
+            margin:0;
+        }
         .showcase {
-            width: 100%;
+            width: 90%;
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        .minhasection form {
+            min-width: 90%;
+            margin:0 auto;
+        }
+
+        .minhasection form input {
+            width: 70%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        #registo {
+            min-width: 100%;
+            margin: 0;
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        #estatisticas {
+            margin: 0;
+        }
+        #tabela_estatisticas {
+            width: 90%;
+            margin: 0 auto;
+        }
+        #tabela_estatisticas th, tr{
+            min-width: auto;
         }
     }
     .topnav.responsive a {

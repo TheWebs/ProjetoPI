@@ -2,13 +2,13 @@
 
 //variaveis globais para nao ter de fazer sempre getelementbyid
 var registo, galeria, estatisticas, home, home_botao, registar_botao, galeria_botao, estatisticas_botao;
-
+var primeira_abertura = true;
 function loadImages()
 {
     var element = document.getElementById("imagens");
     for(var a = 1; a <=9; a++)
     {
-        element.insertAdjacentHTML("beforeend", "<img class='showcase' src='images/" + a.toString() + ".jpg' width=480 height=270/>");
+        element.insertAdjacentHTML("beforeend", "<img class='showcase' src='/images/" + a.toString() + ".jpg' width=480 height=270/>");
     }
     showHome();
 }
@@ -42,7 +42,14 @@ function showHome()
     registar_botao.className = "";
     galeria_botao.className = "";
     estatisticas_botao.className = "";
-        
+    if(primeira_abertura)
+    {
+        primeira_abertura = false;
+        document.getElementById("label_menu_telefone").textContent = "Home";
+        return;
+    }
+    changeMenu();
+    document.getElementById("label_menu_telefone").textContent = "Home";
 }
 
 
@@ -56,6 +63,8 @@ function showRegisto()
     registar_botao.className = "active";
     galeria_botao.className = "";
     estatisticas_botao.className = "";
+    changeMenu();
+    document.getElementById("label_menu_telefone").textContent = "Registar";
 }
 
 
@@ -73,6 +82,8 @@ function showGaleria()
     registar_botao.className = "";
     galeria_botao.className = "active";
     estatisticas_botao.className = "";
+    changeMenu();
+    document.getElementById("label_menu_telefone").textContent = "Galeria";
 }
 
 
@@ -86,4 +97,6 @@ function showEstatisticas()
     registar_botao.className = "";
     galeria_botao.className = "";
     estatisticas_botao.className = "active";
+    changeMenu();
+    document.getElementById("label_menu_telefone").textContent = "Estatisticas";
 }
