@@ -1,44 +1,61 @@
 ﻿'use strict';
 
-var timer = 0;
-var id = 0;
+//variaveis globais para nao ter de fazer sempre getelementbyid
+var registo, galeria, estatisticas, home, home_botao, registar_botao, galeria_botao, estatisticas_botao;
 
 function loadImages()
 {
     var element = document.getElementById("imagens");
     for(var a = 1; a <=9; a++)
     {
-        element.insertAdjacentHTML("beforeend", "<img class='showcase' src='images/" + a.toString() + ".jpg' width=480 height=270/>");
+        element.insertAdjacentHTML("beforeend", "<img class='showcase' src='/images/" + a.toString() + ".jpg' width=480 height=270/>");
     }
     showHome();
 }
 
+function changeMenu() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+//Chamada no onLoad()
 function showHome()
 {
-    var registo = document.getElementById("registo");
-    var galeria = document.getElementById("galeria");
-    var estatisticas = document.getElementById("estatisticas");
-    var home = document.getElementById("home");
+    registo = document.getElementById("registo");
+    galeria = document.getElementById("galeria");
+    estatisticas = document.getElementById("estatisticas");
+    home = document.getElementById("home");
+    home_botao = document.getElementById("home_botao");
+    registar_botao = document.getElementById("registar_botao");
+    galeria_botao = document.getElementById("galeria_botao");
+    estatisticas_botao = document.getElementById("estatisticas_botao");
 
-    home.style.display = "initial";
+    home.style.display = "block";
     registo.style.display = "none";
     galeria.style.display = "none";
     estatisticas.style.display = "none";
-    
+    home_botao.className = "active";
+    registar_botao.className = "";
+    galeria_botao.className = "";
+    estatisticas_botao.className = "";
+        
 }
 
-function showRegisto()
-{
-    var registo = document.getElementById("registo");
-    var galeria = document.getElementById("galeria");
-    var estatisticas = document.getElementById("estatisticas");
-    var home = document.getElementById("home");
 
-    
+function showRegisto()
+{    
     galeria.style.display = "none";
     estatisticas.style.display = "none";
     home.style.display = "none";
-    registo.style.display = "initial";
+    registo.style.display = "block";
+    home_botao.className = "";
+    registar_botao.className = "active";
+    galeria_botao.className = "";
+    estatisticas_botao.className = "";
 }
 
 
@@ -48,69 +65,25 @@ function showGaleria()
     {
         loadImages();
     }
-    
-    var registo = document.getElementById("registo");
-    var galeria = document.getElementById("galeria");
-    var estatisticas = document.getElementById("estatisticas");
-    var home = document.getElementById("home");
-    zeroOpacity(galeria);
-
     registo.style.display = "none";
     estatisticas.style.display = "none";
     home.style.display = "none";
-    galeria.style.display = "initial";
-    makeAppear();
-}
-
-function makeAppear(){
-    if(id != 0)
-    return ;
-    id = setInterval(function() { changeOpacity(); }, 100);
-}
-
-
-
-function changeOpacity(){
-    if(timer >= 1){
-    clearInterval(id);
-    timer = 0;
-    id = 0;
-    return;
-    }
-    var elem = document.getElementById("galeria");
-    timer += 0.25;
-    elem.style.opacity = timer;
-    elem.childNodes.forEach(element => {
-        if(element){
-        if(element.nodeName != "#text"){
-            console.log(element.nodeName);
-        element.style.opacity = timer;
-        }
-        }
-    });
-}
-
-function zeroOpacity(elem)
-{
-    elem.childNodes.forEach(element => {
-        if(element){
-        if(element.nodeName != "#text"){
-             element.style.opacity = "0";
-        }
-        }
-    });
+    galeria.style.display = "block";
+    home_botao.className = "";
+    registar_botao.className = "";
+    galeria_botao.className = "active";
+    estatisticas_botao.className = "";
 }
 
 
 function showEstatisticas()
 {
-    var registo = document.getElementById("registo");
-    var galeria = document.getElementById("galeria");
-    var estatisticas = document.getElementById("estatisticas");
-    var home = document.getElementById("home");
-
-    estatisticas.style.display = "initial";
+    estatisticas.style.display = "block";
     registo.style.display = "none";
     galeria.style.display = "none";
     home.style.display = "none";
+    home_botao.className = "";
+    registar_botao.className = "";
+    galeria_botao.className = "";
+    estatisticas_botao.className = "active";
 }

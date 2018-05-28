@@ -3,41 +3,33 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tower Defense</title>
-    <link type="text/css" rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lobster">
-    <script type="text/javascript" src="scripts/funcoes.js"></script>
-    <nav id="menu">
-        <ul>
-            <a href="javascript:showHome()">
-                <li>Home</li>
-            </a>
-            <a href="javascript:showRegisto()">
-                <li>
-                    Registar
-                </li>
-            </a>
-            <a href="javascript:showGaleria()">
-                <li>
-                    Galeria
-                </li>
-            </a>
-            <a href="javascript:showEstatisticas()">
-                <li>
-                    Estatísticas
-                </li>
-            </a>
-        </ul>
+    <link type="text/css" rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lobster">
+    <script type="text/javascript" src="/scripts/funcoes.js"></script>
+    <nav class="topnav" id="myTopnav">
+        <a id="home_botao" href="javascript:showHome()">Home</a>
+        <a id="registar_botao" href="javascript:showRegisto()">Registar</a>
+        <a id="galeria_botao" href="javascript:showGaleria()">Galeria</a>
+        <a id="estatisticas_botao" href="javascript:showEstatisticas()">Estatísticas</a>
+        <a href="javascript:void(0);" class="icon" onclick="changeMenu()">
+          <span class="menu_hamburguer"></span>
+        </a>
     </nav>
-    <h1 id="titulos">Tower Defense</h1>
+    <h1 id="titulo_principal">Tower Defense</h1>
 </head>
 
 <body onload="showHome()">
     <section id="home" class="minhasection">
-        <h1 id="titulos" style="font-size: 30px;">Descrição</h1>
+        <h1 id="subtitulos">Descrição</h1>
         <article>
-            Trata-se de um jogo do tipo <span style="font-style:italic;">Tower Defense</span> com varios niveis e mapas. Existem varios tipos de torres defensivas assim como entidades enimigas. Pode ser jogado a partir de varias prespetivas: aerea (cima-baixo), prespectiva e primeira pessoa (como entidade defensiva).
-            <iframe class="video" src="https://www.youtube.com/embed/SHPbBVuBwOI?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <p>Trata-se de um jogo do tipo
+            <span style="font-style:italic;">Tower Defense</span> com varios niveis e mapas. Existem varios tipos de torres defensivas assim como entidades
+            enimigas. Pode ser jogado a partir de varias prespetivas: aerea (cima-baixo), prespectiva e primeira pessoa (como
+            entidade defensiva).</p>
+            <iframe class="video" src="https://www.youtube.com/embed/SHPbBVuBwOI?autoplay=0" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
             <figcaption>
                 <caption>
                     Video 1. Trailer do jogo Tower Defense
@@ -47,27 +39,59 @@
     </section>
 
     <section id="registo" class="minhasection">
-            <h1 id="titulos" style="font-size: 30px;">Registar</h1>
-            <form action="">
-                <fieldset>
-                  <legend style="text-align:center;">Dados:</legend>
-                  Utilizador:<br>
-                  <input type="text" name="firstname" value="Mickey"><br>
-                  Password:<br>
-                  <input type="password" name="lastname" value="Mouse"><br><br>
-                  <input type="submit" value="Submit">
-                </fieldset>
-              </form>
+        <h1 id="subtitulos">Registar</h1>
+        <form autocomplete="off">
+            <fieldset>
+                <legend style="text-align:center;">Dados:</legend>
+                <input type="text" name="firstname" maxlength="30" placeholder="Nome de utilizador">
+                <input type="password" name="lastname" maxlength="30" placeholder="Password">
+                <label>Data de nascimento:</label>
+                <input type="date" name="bday">
+                <button type="submit" class="submit_button">Registar</button>
+            </fieldset>
+        </form>
     </section>
 
 
     <section id="galeria">
-            <h1 id="titulos" style="font-size: 30px;">Galeria</h1>
-            <div id="imagens"></div>
+        <h1 id="subtitulos">Galeria</h1>
+        <div id="imagens"></div>
     </section>
 
     <section id="estatisticas" class="minhasection">
-        
+        <h1 id="subtitulos">Estatísticas</h1>
+        <select id="dropdown">
+            <option value="numero_de_mortes">Numero de mortes</option>
+            <option value="pontos">Pontos</option>
+            <option value="nivel_maximo">Nivel máximo</option>
+            <option value="tempo_de_jogo">Tempo de jogo</option>
+        </select>
+        <table border="1" align="center" id="tabela_estatisticas">
+            <tr>
+                <th>Posição</th>
+                <th>Jogador</th>
+                <th>Mortes</th>
+                <th>Data</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>TheWebs</td>
+                <td>55</td>
+                <td>13/03/2015</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>kiko298</td>
+                <td>45</td>
+                <td>12/04/2015</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Jonas22</td>
+                <td>30</td>
+                <td>02/03/2015</td>
+            </tr>
+        </table>
     </section>
 
 
